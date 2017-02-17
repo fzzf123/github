@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    	<class name="cn.lpc.domain.Customer" table="s_cust"> 
+    		<id name="cid">
+    			<generator class="native"></generator>
+    		</id>
+    		
+    		<property name="custName" column="cust_name"></property>
+    		<property name="custType" column="cust_type"></property>
+    		<property name="custPhone" column="cust_phone"></property>
+    		<property name="custAddress" column="cust_address"></property>
+    		
+    		<many-to-one name="custLinkUser" class="cn.lpc.domain.User" column="cust_link_user"></many-to-one>
+    	</class>
+    </hibernate-mapping>
